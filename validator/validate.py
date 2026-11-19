@@ -283,9 +283,17 @@ def main() -> int:
     args.out.write_text(json.dumps({"errors": errors}, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
 
     if args.candidates:
-        # Pha 2 sẽ điền phần đối chiếu detection <-> panoptic
+        # Pha 2: đối chiếu detection <-> panoptic (validator/crosscheck.py)
+        import crosscheck
+        d = load_delivery(args.delivery)
+        sizes = image_sizes(args.delivery, d["items"], d["panoptic"])
+        skip = {e["target"] for e in errors}  # mỗi ảnh nhiều nhất một lỗi
+        cands = crosscheck.find_candidates(args.delivery, d, sizes, skip, read_labels)
         args.candidates.parent.mkdir(parents=True, exist_ok=True)
-        args.candidates.write_text(json.dumps({"candidates": []}, indent=1) + "\n", encoding="utf-8")
+        args.candidates.write_text(json.dumps({"candidates": cands}, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+        print(f"{len(cands)} ứng viên lỗi gán nhãn -> {args.candidates}")
+        for kind, n in sorted(Counter(c["type"] for c in cands).items()):
+            print(f"  {kind:22s} {n}")
 
     by_type = Counter(e["type"] for e in errors)
     print(f"{len(errors)} lỗi luật -> {args.out}")
