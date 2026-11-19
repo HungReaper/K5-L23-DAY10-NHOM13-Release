@@ -250,15 +250,31 @@ def main() -> None:
     rate = len(err_imgs) / total_imgs if total_imgs > 0 else 0.0
     v1_decision = "Hold" if rate > 0.02 else "Release"
 
+    # Nhóm jobs theo guideline version một cách linh hoạt
+    gl_to_jobs: dict[str, list[str]] = {}
+    for jid, jinfo in sorted(jobs.items()):
+        gl = jinfo.get("guideline", "").strip()
+        if gl:
+            gl_to_jobs.setdefault(gl, []).append(jid)
+    gl_parts = []
+    for gl, jlist in gl_to_jobs.items():
+        if len(jlist) > 1:
+            gl_parts.append(f"{gl} ({jlist[0]}-{jlist[-1]})")
+        else:
+            gl_parts.append(f"{gl} ({jlist[0]})")
+    guideline_str = ", ".join(gl_parts) if gl_parts else "v1.2"
+
+    pan_str = ", ".join(sorted(set(panoptic_issues))) if panoptic_issues else "không có"
+
     readme_content = f"""Release: {rid}_v2
 Parent: {rid}
 Số ảnh: {len(copied_stems)}
 Số nhãn: {total_labels}
-Guideline: v1.2 (J01-J04), v1.3 (J05-J10)
+Guideline: {guideline_str}
 QC v1: {len(err_imgs)}/{total_imgs} = {rate:.1%}
 Kết luận v1: {v1_decision} — Tỉ lệ ảnh lỗi {rate:.1%} ({len(err_imgs)}/{total_imgs}) vượt ngưỡng 2% cho phép release
 Kết luận v2: Release — Đã tách {len(rework_rows)} ảnh lỗi sang rework_queue.csv, chuẩn hóa split cảnh và cập nhật hash thực tế
-Ghi chú: Lô v2 chỉ giữ các ảnh và nhãn detection đạt chuẩn; các ảnh lỗi detection được chuyển cho đúng annotator và reviewer theo jobs.csv để gán lại; các cảnh rò rỉ split đã được thống nhất về một split duy nhất; lỗi panoptic không ảnh hưởng nhãn detection và đã được bàn giao sang team panoptic theo dõi riêng.
+Ghi chú: Lô v2 chỉ giữ các ảnh và nhãn detection đạt chuẩn; các ảnh lỗi detection được chuyển cho đúng annotator và reviewer theo jobs.csv để gán lại; các cảnh rò rỉ split đã được thống nhất về một split duy nhất; ảnh bị sai hash (000000001993) đã mở kiểm tra tệp ảnh còn nguyên vẹn nên cập nhật hash thật và giữ trong v2; các ảnh chỉ lỗi panoptic ({pan_str}) giữ nguyên trong v2 và đã báo team panoptic.
 """
     (v2 / "README.txt").write_text(readme_content.strip() + "\n", encoding="utf-8")
     print(f"[+] Đã sinh README.txt chuẩn")

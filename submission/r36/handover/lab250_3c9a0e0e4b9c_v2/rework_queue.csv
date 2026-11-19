@@ -1,0 +1,14 @@
+image,type,annotator,reviewer,action
+000000000139,duplicate_box,A04,Q01,reannotate_duplicate_box
+000000000872,missing_box,A04,Q01,reannotate_missing_box
+000000001503,missing_box,A04,Q01,reannotate_missing_box
+000000004495,invalid_class,A02,Q01,reannotate_invalid_class
+000000004795,class_swap,A02,Q01,reannotate_class_swap
+000000006723,class_swap,A03,Q03,reannotate_class_swap
+000000006954,duplicate_box,A03,Q03,reannotate_duplicate_box
+000000007278,bbox_drift,A03,Q03,reannotate_bbox_drift
+000000009914,class_swap,A03,Q01,reannotate_class_swap
+000000014888,class_swap,A01,Q01,reannotate_class_swap
+000000020059,invalid_class,A01,Q03,reannotate_invalid_class
+000000020553,class_swap,A01,Q02,reannotate_class_swap
+000000022892,bbox_out_of_bounds,A01,Q02,reannotate_bbox_out_of_bounds

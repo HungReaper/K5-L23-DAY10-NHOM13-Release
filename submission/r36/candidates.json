@@ -1,0 +1,261 @@
+{
+ "candidates": [
+  {
+   "image": "000000007278",
+   "type": "bbox_drift",
+   "score": 0.125,
+   "detail": "'surfboard': chỉ 87% pixel segment nằm trong box (IoU bbox 0.63)",
+   "box": [
+    293.4,
+    66.3,
+    343.1,
+    122.9
+   ],
+   "segment_bbox": [
+    284,
+    58,
+    338,
+    119
+   ]
+  },
+  {
+   "image": "000000004795",
+   "type": "class_swap|category_swap",
+   "score": 0.998,
+   "detail": "box 'vase' trùng segment 'cat' (IoU 1.00); mở ảnh xem bên nào đúng",
+   "box": [
+    152.8,
+    113.5,
+    548.1,
+    477.9
+   ],
+   "segment_bbox": [
+    153,
+    114,
+    548,
+    478
+   ]
+  },
+  {
+   "image": "000000014888",
+   "type": "class_swap|category_swap",
+   "score": 0.998,
+   "detail": "box 'sheep' trùng segment 'cow' (IoU 1.00); mở ảnh xem bên nào đúng",
+   "box": [
+    0.0,
+    3.1,
+    639.3,
+    441.5
+   ],
+   "segment_bbox": [
+    0,
+    3,
+    639,
+    441
+   ]
+  },
+  {
+   "image": "000000020333",
+   "type": "class_swap|category_swap",
+   "score": 0.995,
+   "detail": "box 'bowl' trùng segment 'wine glass' (IoU 0.99); mở ảnh xem bên nào đúng",
+   "box": [
+    1.4,
+    494.8,
+    264.6,
+    630.0
+   ],
+   "segment_bbox": [
+    1,
+    495,
+    264,
+    630
+   ]
+  },
+  {
+   "image": "000000018833",
+   "type": "class_swap|category_swap",
+   "score": 0.99,
+   "detail": "box 'cat' trùng segment 'dog' (IoU 0.99); mở ảnh xem bên nào đúng",
+   "box": [
+    186.7,
+    46.9,
+    507.4,
+    370.5
+   ],
+   "segment_bbox": [
+    187,
+    47,
+    507,
+    368
+   ]
+  },
+  {
+   "image": "000000009590",
+   "type": "class_swap|category_swap",
+   "score": 0.46,
+   "detail": "box 'cup' nằm trên segment 'bowl' (IoU 0.92); segment này ĐÃ có box 'bowl' riêng -> có thể COCO gán 2 lớp cho 1 vật",
+   "box": [
+    423.4,
+    275.0,
+    471.7,
+    305.9
+   ],
+   "segment_bbox": [
+    424,
+    276,
+    470,
+    306
+   ]
+  },
+  {
+   "image": "000000006723",
+   "type": "class_swap|category_swap",
+   "score": 0.456,
+   "detail": "box 'truck' nằm trên segment 'bus' (IoU 0.91); segment này ĐÃ có box 'bus' riêng -> có thể COCO gán 2 lớp cho 1 vật",
+   "box": [
+    362.1,
+    192.7,
+    389.5,
+    223.2
+   ],
+   "segment_bbox": [
+    362,
+    194,
+    389,
+    224
+   ]
+  },
+  {
+   "image": "000000018380",
+   "type": "class_swap|category_swap",
+   "score": 0.434,
+   "detail": "box 'cup' nằm trên segment 'wine glass' (IoU 0.87); segment này ĐÃ có box 'wine glass' riêng -> có thể COCO gán 2 lớp cho 1 vật",
+   "box": [
+    292.2,
+    183.8,
+    309.5,
+    207.1
+   ],
+   "segment_bbox": [
+    292,
+    185,
+    309,
+    206
+   ]
+  },
+  {
+   "image": "000000009914",
+   "type": "class_swap|category_swap",
+   "score": 0.407,
+   "detail": "box 'hot dog' nằm trên segment 'sandwich' (IoU 0.81); segment này ĐÃ có box 'sandwich' riêng -> có thể COCO gán 2 lớp cho 1 vật",
+   "box": [
+    518.7,
+    185.6,
+    640.0,
+    464.4
+   ],
+   "segment_bbox": [
+    529,
+    163,
+    637,
+    471
+   ]
+  },
+  {
+   "image": "000000020553",
+   "type": "class_swap|category_swap",
+   "score": 0.386,
+   "detail": "box 'bottle' nằm trên segment 'vase' (IoU 0.77); segment này ĐÃ có box 'vase' riêng -> có thể COCO gán 2 lớp cho 1 vật",
+   "box": [
+    406.6,
+    132.3,
+    418.3,
+    186.2
+   ],
+   "segment_bbox": [
+    405,
+    133,
+    417,
+    186
+   ]
+  },
+  {
+   "image": "000000007386",
+   "type": "instance_merge",
+   "score": 0.4,
+   "detail": "segment 'bicycle' (3827 px): box tốt nhất chỉ chứa 60%, box cùng lớp thứ hai chứa riêng 40%, hai box phủ 100%",
+   "segment_bbox": [
+    219,
+    101,
+    290,
+    214
+   ],
+   "boxes": [
+    [
+     221.8,
+     101.0,
+     289.9,
+     166.2
+    ],
+    [
+     218.7,
+     158.8,
+     279.7,
+     214.1
+    ]
+   ]
+  },
+  {
+   "image": "000000001818",
+   "type": "missing_box",
+   "score": 0.4416,
+   "detail": "segment 'zebra' 120106 px (44.2% ảnh) không có box",
+   "segment_bbox": [
+    0,
+    1,
+    638,
+    425
+   ]
+  },
+  {
+   "image": "000000012748",
+   "type": "missing_box",
+   "score": 0.1853,
+   "detail": "segment 'person' 56935 px (18.5% ảnh) không có box",
+   "segment_bbox": [
+    221,
+    139,
+    480,
+    632
+   ]
+  },
+  {
+   "image": "000000000872",
+   "type": "missing_box",
+   "score": 0.12,
+   "detail": "segment 'person' 47692 px (12.0% ảnh) không có box",
+   "segment_bbox": [
+    164,
+    126,
+    429,
+    607
+   ],
+   "also": [
+    "missing_box: segment 'person' 25073 px (6.3% ảnh) không có box"
+   ]
+  },
+  {
+   "image": "000000001503",
+   "type": "missing_box",
+   "score": 0.0532,
+   "detail": "segment 'keyboard' 4083 px (5.3% ảnh) không có box",
+   "segment_bbox": [
+    161,
+    152,
+    315,
+    198
+   ]
+  }
+ ]
+}
