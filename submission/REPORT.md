@@ -4,7 +4,7 @@
 - F1 theo seed (rule / cross_check / overall):
   * seed 36: 1.0 / ... / 0.8.
   * seed 13007: 1.0 / ... / 0.8.
-- Số ứng viên trên lô sạch (`--no-faults`): <<...>>; hàng đợi trên seed luyện tập: <<... ảnh>>
+- Số ứng viên trên lô sạch (`--no-faults`): 4 ứng viên trên 4 ảnh; hàng đợi trên seed luyện tập: 25 ứng viên trên 23 ảnh
 - Ngưỡng đã chọn và cách chọn (không dùng `_private`): <<...>>
 
 ## 2. Vì sao báo hết ứng viên làm F1 giảm?
