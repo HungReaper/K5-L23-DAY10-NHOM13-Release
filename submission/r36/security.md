@@ -1,0 +1,15 @@
+# Bảo mật khi làm việc
+
+## 1. Ca USB: hết giờ, muốn chép lô về nhà làm tiếp
+Khi hết giờ làm việc nhưng công việc chưa hoàn thành, tuyệt đối không được sao chép dữ liệu của dự án ra thiết bị lưu trữ cá nhân như USB, ổ cứng ngoài hay tải lên các dịch vụ đám mây công cộng (Google Drive cá nhân, Telegram, Zalo) hoặc gửi qua email cá nhân. Dữ liệu gán nhãn thuộc quyền sở hữu bảo mật của dự án và khách hàng; việc tự ý trích xuất ra ngoài thiết bị được quản lý của công ty vi phạm nghiêm trọng thỏa thuận bảo mật dữ liệu (NDA), có nguy cơ làm rò rỉ dữ liệu hoặc nhiễm mã độc từ máy cá nhân ngược lại hệ thống. Thay vào đó, nhân viên cần bàn giao tiến độ hiện tại cho ca sau, tạo yêu cầu xin làm thêm giờ (OT) tại văn phòng hoặc sử dụng môi trường làm việc từ xa an toàn (VPN công ty / VDI có kiểm soát quyền truy cập) đã được quản trị viên và Project Manager cấp phép chính thức.
+
+## 2. Năm việc: được hay không
+1. Mở job được giao trên máy công ty: ĐƯỢC. Đây là môi trường làm việc tiêu chuẩn, đã được áp dụng các biện pháp kiểm soát bảo mật, lưu vết truy cập và phần mềm phòng chống mã độc theo quy định của tổ chức.
+2. Chụp màn hình gửi người quen: KHÔNG ĐƯỢC. Hành vi này vi phạm trực tiếp cam kết bảo mật thông tin (NDA), làm lộ hình ảnh dữ liệu và thông tin sản phẩm của khách hàng khi chưa được cho phép.
+3. Chép lô ra USB: KHÔNG ĐƯỢC. Thiết bị lưu trữ ngoài không được kiểm soát có nguy cơ làm thất thoát dữ liệu nhạy cảm hoặc lây lan phần mềm độc hại vào hạ tầng mạng nội bộ.
+4. Dán nhãn thật lên chatbot: KHÔNG ĐƯỢC. Việc gửi dữ liệu dự án lên các công cụ AI / chatbot công cộng của bên thứ ba có thể khiến dữ liệu bị lưu trữ trên máy chủ công cộng và sử dụng để tái huấn luyện mô hình bên ngoài, vi phạm quyền riêng tư và bản quyền dữ liệu.
+5. Đưa tài khoản CVAT cho đồng nghiệp: KHÔNG ĐƯỢC. Mỗi tài khoản gán nhãn được định danh cho từng cá nhân để truy vết trách nhiệm và đánh giá chất lượng; việc chia sẻ tài khoản làm sai lệch nhật ký kiểm toán (audit log) và vi phạm nguyên tắc bảo mật danh tính.
+
+## 3. Ca khuôn mặt: thấy mặt người rõ trong lô, guideline yêu cầu làm mờ
+Trong lô dữ liệu seed 36, có nhiều hình ảnh chứa người thật với khuôn mặt xuất hiện rõ nét, ví dụ cụ thể như ảnh 000000000785 (người chơi thể thao hiển thị rất rõ khuôn mặt và hình thể). Khi phát hiện trường hợp này trong khi guideline yêu cầu phải làm mờ khuôn mặt để bảo vệ quyền riêng tư, người kiểm tra tuyệt đối không được tự ý can thiệp chỉnh sửa, làm mờ thủ công hay tự tiện xóa ảnh khỏi tập dữ liệu vì hành động đó sẽ làm sai lệch cấu trúc dữ liệu gốc, phá vỡ tính toàn vẹn (hash sha256) và tính nhất quán của lô dữ liệu. 
+Hành động bắt buộc phải thực hiện là: Đưa trạng thái của lô dữ liệu về HOLD ngay lập tức, không cho phép release để đưa vào huấn luyện mô hình. Đồng thời lập biên bản báo cáo ngay cho người phụ trách dự án (Project Manager / Data Lead) để phối hợp với bộ phận tiền xử lý dữ liệu và khách hàng đưa ra phương án xử lý làm mờ chuẩn hóa hàng loạt hoặc loại bỏ chính thức theo đúng quy trình.
