@@ -11,7 +11,10 @@
 <<Trả lời bằng số của nhóm.>>
 
 ## 3. Quyết định và lineage
-<<QC v1 a/b, kết luận, vì sao R-021 phải xem lại hoặc train lại.>>
+- **QC v1:** 24/250 ảnh/cảnh có lỗi = 9,6% (12 lỗi luật + 12 lỗi gán nhãn đã `confirmed` trong `review_log.csv`; 3 ứng viên bị `rejected` không tính).
+- **Kết luận v1: HOLD.** Theo ngưỡng Day 7, trên 2% ảnh lỗi thì không Release. Ngưỡng tính theo **tỉ lệ ảnh lỗi**, không theo số lỗi, vì lô lớn hơn sẽ có nhiều lỗi hơn mà chất lượng không đổi; tỉ lệ mới so sánh được giữa các lô.
+- **Lineage** (`runs/lineage.jsonl`): `inject` release `lab250_6112a1fce312` (seed 36) → `train` run `R-021` trên release này → `decision HOLD` cho v1. Lệnh `lineage.py impact --release-id lab250_6112a1fce312` trả về `R-021: affected=True action=review_or_retrain`. Dòng `release v2 --parent` sẽ được ghi sau khi đóng gói v2.
+- **Vì sao R-021 phải xem lại hoặc train lại:** R-021 đã học trực tiếp từ lô v1 có 9,6% ảnh lỗi, trong đó có nhãn sai lớp, box lệch, thiếu box và guideline cũ cho lớp `bottle`. Sửa dataset (tạo v2) không tự sửa trọng số của model đã train, nên R-021 vẫn mang các sai lệch đã học. Phải xem lại kết quả của R-021 (đặc biệt lớp bị lỗi, như `bottle` bị bỏ sót) hoặc train lại trên v2.
 
 ## 4. Hash chứng minh gì, không chứng minh gì?
 - **Hash chứng minh điều gì:**
