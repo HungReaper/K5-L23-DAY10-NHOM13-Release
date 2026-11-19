@@ -1,7 +1,9 @@
 # Báo cáo nhóm <<XX>>
 
 ## 1. Số liệu luyện tập
-- F1 theo seed (rule / cross_check / overall): <<seed: ... / ... / ...>>
+- F1 theo seed (rule / cross_check / overall):
+  * seed 36: 1.0 / ... / 0.8.
+  * seed 13007: 1.0 / ... / 0.8.
 - Số ứng viên trên lô sạch (`--no-faults`): <<...>>; hàng đợi trên seed luyện tập: <<... ảnh>>
 - Ngưỡng đã chọn và cách chọn (không dùng `_private`): <<...>>
 
