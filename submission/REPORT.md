@@ -58,3 +58,16 @@ Script `tools/trace_query.py` đọc từ `delivery/` của lô (không viết c
 - Không tìm thấy bug trong `scripts/`. Nhóm không sửa file nào trong `scripts/`.
 - **Lưu ý khi làm trên Windows:** git mặc định `core.autocrlf=true`. `tools/build_v2.py` ghi `manifest.csv`, `README.txt`... kiểu CRLF, `pack_release.py` băm các byte CRLF đó, nhưng khi commit git đổi sang LF. Kết quả: trên máy Windows `check_handover.py` báo 17/17 PASS, còn đóng gói lại từ bản đã commit (giả lập máy người chấm bằng `git archive`) thì lệch mã `.sha256` (H15 FAIL). Nhóm thêm `.gitattributes` (`submission/** -text`) để git giữ nguyên từng byte. Đã kiểm lại: đóng gói từ bản commit khớp mã `.sha256`.
 - Điểm chưa rõ: một vật có thể được COCO gán **2 box khác lớp** chồng lên nhau (vd `vase` + `bottle`, `bus` + `truck`). Khi một trong hai lớp sai, đề không nói rõ nên tính là `class_swap` hay lệch tự nhiên. Nhóm quyết theo ảnh: lớp nào sai với vật thật thì bên đó sai; nếu cả hai tên đều chấp nhận được thì `rejected`.
+
+## 7. Đề ẩn: vì sao `rejected`
+Hàng đợi đề ẩn có **22 ứng viên**. Sau khi xem ảnh: **10 `confirmed`**, **12 `rejected`** (chi tiết ở `submission/de_an/review_log.csv`). Có 12 ca bị loại, chia làm ba nhóm lệch tự nhiên:
+
+| Nhóm | Số ca | Ảnh | Vì sao không phải lỗi |
+|---|---:|---|---|
+| COCO gán 2 box khác lớp cho 1 vật | 10 | img_0145, 0115, 0146, 0062, 0036, 0120, 0226, 0006, 0169, 0131 | Segment đã có box **cùng lớp** ghép đúng. Box khác lớp chồng lên chỉ là nhãn trùng có sẵn của COCO (vd `car` + `truck` cho một xe bán tải, `handbag` + `backpack` cho một cái túi). Không có box nào bị **đổi** lớp. |
+| Vật quá nhỏ | 1 | img_0180 | Đèn giao thông chụp ban đêm, chỉ vài chục pixel. Box lệch với segment vì độ phân giải, không thấy box bị kéo khỏi vật. |
+| Vật bị che | 1 | img_0199 | Người bị che gần hết sau người ném đĩa, chỉ lộ chân, chiếm khoảng 1% ảnh. COCO không vẽ box cho vật như vậy. |
+
+**Cách phân biệt ứng viên swap:** với mỗi ứng viên `class_swap`, nhóm kiểm hai điều. (1) Segment có box cùng lớp nào khác đã ghép chưa? Nếu có thì box lạ là nhãn trùng, ghi `rejected`. (2) Nếu không có, mở ảnh xem vật thật là gì. Detection sai thì là `class_swap` (img_0028 xe máy bị ghi `bicycle`; img_0238 ghế gỗ bị ghi `bench`). Panoptic sai thì là `category_swap` (img_0061 lát bánh bị ghi `donut`; img_0086 lưng ghế bị ghi `dining table`).
+
+**Vì sao đề ẩn có nhiều ca nhãn trùng hơn r36:** luật box mồ côi (mục 1) đưa vào hàng đợi mọi box không ghép được segment. Trên lô sạch 50 ảnh không có box nào như vậy, nhưng đề ẩn dùng 250 ảnh khác nên gặp nhiều cặp `car`/`truck`, `bus`/`truck`. Nhóm giữ luật vì nó cần để không bỏ sót `class_swap` thật, và để bước xem ảnh loại báo thừa.
