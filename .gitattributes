@@ -1,0 +1,2 @@
+# Bài nộp: giữ nguyên từng byte (không đổi CRLF/LF), vì manifest.csv và .sha256 băm trên bytes thật.
+submission/** -text

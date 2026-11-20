@@ -10,5 +10,4 @@ image,type,annotator,reviewer,action
 000000009914,class_swap,A03,Q01,reannotate_class_swap
 000000014888,class_swap,A01,Q01,reannotate_class_swap
 000000020059,invalid_class,A01,Q03,reannotate_invalid_class
-000000020553,class_swap,A01,Q02,reannotate_class_swap
 000000022892,bbox_out_of_bounds,A01,Q02,reannotate_bbox_out_of_bounds

@@ -189,6 +189,7 @@ image,scene_id,split,job_id,annotator,reviewer,guideline
 000000020107,scene_308,train,J08,A01,Q03,v1.3
 000000020247,scene_308,train,J08,A01,Q03,v1.3
 000000020333,scene_636,val,J09,A01,Q02,v1.3
+000000020553,scene_636,val,J09,A01,Q02,v1.3
 000000020571,scene_636,val,J09,A01,Q02,v1.3
 000000020992,scene_636,val,J09,A01,Q02,v1.3
 000000021167,scene_636,val,J09,A01,Q02,v1.3

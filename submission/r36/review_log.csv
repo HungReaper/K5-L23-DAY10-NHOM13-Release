@@ -1,16 +1,16 @@
 image,type,verdict,note
-000000007278,bbox_drift,confirmed,[Dũng] Ván lướt sóng (surfboard) bị lệch khỏi vật, chỉ 87% pixel mask nằm trong box
-000000004795,class_swap,confirmed,[Tùng] Con mèo nằm trên sofa nhưng detection gán nhầm thành lọ hoa (vase), panoptic ghi cat đúng
-000000014888,class_swap,confirmed,[Hưng] Con bò (cow) trên bãi cỏ nhưng detection gán nhầm thành cừu (sheep), panoptic ghi cow đúng
-000000020333,category_swap,confirmed,[Tân] Cái bát (bowl) trên bàn nhưng panoptic nhận nhầm thành ly rượu (wine glass), detection ghi bowl đúng
-000000018833,category_swap,confirmed,[Khải Hưng] Con mèo (cat) nhưng panoptic nhận nhầm thành chó (dog), detection ghi cat đúng
-000000009590,class_swap,rejected,[Nam] Vật thể khoanh ô vàng rõ ràng là cái bát (bowl), detection đã có box bowl riêng, ô cup là do COCO gán trùng hai nhãn
-000000006723,class_swap,confirmed,[Dũng] Xe buýt (bus) nhưng detection gán nhầm thành xe tải (truck), panoptic ghi bus đúng
-000000018380,category_swap,confirmed,[Tùng] Cốc không chân trên quầy bar nhưng panoptic nhận nhầm thành ly rượu (wine glass), detection ghi cup đúng
-000000009914,class_swap,confirmed,[Hưng] Bánh kẹp xúc xích (hot dog) nhưng detection gán nhầm thành sandwich, panoptic ghi sandwich đúng
-000000020553,class_swap,confirmed,[Tân] Chai lọ (bottle) trên kệ nhưng detection gán nhầm thành lọ hoa (vase), panoptic ghi vase đúng
+000000007278,bbox_drift,confirmed,"[Dũng] Ván lướt sóng (surfboard) bị lệch khỏi vật, chỉ 87% pixel mask nằm trong box"
+000000004795,class_swap,confirmed,"[Tùng] Con mèo nằm trên sofa nhưng detection gán nhầm thành lọ hoa (vase), panoptic ghi cat đúng"
+000000014888,class_swap,confirmed,"[Hưng] Con bò (cow) trên bãi cỏ nhưng detection gán nhầm thành cừu (sheep), panoptic ghi cow đúng"
+000000020333,category_swap,confirmed,"[Tân] Cái bát (bowl) trên bàn nhưng panoptic nhận nhầm thành ly rượu (wine glass), detection ghi bowl đúng"
+000000018833,category_swap,confirmed,"[Khải Hưng] Con mèo (cat) nhưng panoptic nhận nhầm thành chó (dog), detection ghi cat đúng"
+000000009590,class_swap,rejected,"[Nam] Vật thể khoanh ô vàng rõ ràng là cái bát (bowl), detection đã có box bowl riêng, ô cup là do COCO gán trùng hai nhãn"
+000000006723,class_swap,confirmed,"[Dũng] Xe buýt (bus) nhưng detection gán nhầm thành xe tải (truck), panoptic ghi bus đúng"
+000000018380,category_swap,confirmed,"[Tùng] Cốc không chân trên quầy bar nhưng panoptic nhận nhầm thành ly rượu (wine glass), detection ghi cup đúng"
+000000009914,class_swap,confirmed,"[Hưng] Hai box detection trùng lên cùng một chiếc bánh: một box ghi hot dog, một box ghi sandwich; vật là sandwich, segment panoptic ghi sandwich đúng -> box hot dog sai lớp"
+000000020553,category_swap,confirmed,[Tân; Hưng xem lại] Hai box detection trùng nhau trên cùng một vật: box bottle đúng là cái chai; segment panoptic khoanh vật này ghi vase là sai (box vase trùng là COCO gán 2 lớp cho 1 vật) -> panoptic sai lớp
 000000007386,instance_merge,confirmed,[Khải Hưng] Hai chiếc xe đạp (bicycle) dựng cạnh nhau bị panoptic gộp chung thành một segment duy nhất
-000000001818,missing_box,rejected,[Nam] Ngựa vằn con rúc đầu vào bụng mẹ, viền polygon bị gãy ở tai và thiếu chiếc chân sau bên cạnh, lệch tự nhiên do che khuất chứ detection không bỏ sót vật
-000000012748,missing_box,rejected,[Dũng] Người ở góc mép ảnh bị cắt cụt quá nửa, detection bỏ qua là hợp lý theo quy tắc mép ảnh
+000000001818,missing_box,rejected,"[Nam] Ngựa vằn con rúc đầu vào bụng mẹ, viền polygon bị gãy ở tai và thiếu chiếc chân sau bên cạnh, lệch tự nhiên do che khuất chứ detection không bỏ sót vật"
+000000012748,missing_box,rejected,"[Dũng] Người ở góc mép ảnh bị cắt cụt quá nửa, detection bỏ qua là hợp lý theo quy tắc mép ảnh"
 000000000872,missing_box,confirmed,[Tùng] Người chơi bóng chày đứng ở góc sân nhìn rất rõ nhưng detection bị thiếu hoàn toàn box person
 000000001503,missing_box,confirmed,[Hưng] Bàn phím máy tính (keyboard) trên bàn làm việc rõ ràng nhưng detection bị thiếu hoàn toàn box keyboard
