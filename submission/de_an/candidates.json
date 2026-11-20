@@ -1,0 +1,405 @@
+{
+ "candidates": [
+  {
+   "image": "img_0178",
+   "type": "bbox_drift",
+   "score": 0.159,
+   "detail": "'car': chỉ 84% pixel segment nằm trong box (IoU bbox 0.61)",
+   "box": [
+    494.8,
+    145.8,
+    620.1,
+    208.9
+   ],
+   "segment_bbox": [
+    482,
+    142,
+    597,
+    200
+   ]
+  },
+  {
+   "image": "img_0117",
+   "type": "bbox_drift",
+   "score": 0.076,
+   "detail": "'elephant': chỉ 92% pixel segment nằm trong box (IoU bbox 0.48)",
+   "box": [
+    196.0,
+    51.8,
+    343.1,
+    229.6
+   ],
+   "segment_bbox": [
+    245,
+    75,
+    365,
+    220
+   ]
+  },
+  {
+   "image": "img_0045",
+   "type": "bbox_drift",
+   "score": 0.068,
+   "detail": "'keyboard': chỉ 93% pixel segment nằm trong box (IoU bbox 0.71)",
+   "box": [
+    294.0,
+    147.3,
+    390.6,
+    204.3
+   ],
+   "segment_bbox": [
+    277,
+    142,
+    386,
+    207
+   ],
+   "also": [
+    "class_swap|category_swap: box 'handbag' nằm trên segment 'backpack' (IoU 0.88); segment này ĐÃ có box 'backpack' riêng -> có thể COCO gán 2 lớp cho 1 vật"
+   ]
+  },
+  {
+   "image": "img_0180",
+   "type": "bbox_drift",
+   "score": 0.067,
+   "detail": "'traffic light': chỉ 93% pixel segment nằm trong box (IoU bbox 0.74)",
+   "box": [
+    199.5,
+    339.7,
+    202.8,
+    345.4
+   ],
+   "segment_bbox": [
+    199,
+    340,
+    203,
+    345
+   ]
+  },
+  {
+   "image": "img_0028",
+   "type": "class_swap|category_swap",
+   "score": 0.996,
+   "detail": "box 'bicycle' trùng segment 'motorcycle' (IoU 1.00); mở ảnh xem bên nào đúng",
+   "box": [
+    0.0,
+    2.1,
+    334.6,
+    418.9
+   ],
+   "segment_bbox": [
+    0,
+    2,
+    334,
+    418
+   ]
+  },
+  {
+   "image": "img_0061",
+   "type": "class_swap|category_swap",
+   "score": 0.992,
+   "detail": "box 'cake' trùng segment 'donut' (IoU 0.99); mở ảnh xem bên nào đúng",
+   "box": [
+    536.2,
+    95.4,
+    640.0,
+    216.7
+   ],
+   "segment_bbox": [
+    536,
+    95,
+    640,
+    217
+   ]
+  },
+  {
+   "image": "img_0238",
+   "type": "class_swap|category_swap",
+   "score": 0.972,
+   "detail": "box 'bench' trùng segment 'chair' (IoU 0.97); mở ảnh xem bên nào đúng",
+   "box": [
+    47.6,
+    69.4,
+    92.7,
+    123.4
+   ],
+   "segment_bbox": [
+    48,
+    69,
+    93,
+    123
+   ],
+   "also": [
+    "class_swap|category_swap: box 'couch' nằm trên segment 'chair' (IoU 0.69); segment này ĐÃ có box 'chair' riêng -> có thể COCO gán 2 lớp cho 1 vật"
+   ]
+  },
+  {
+   "image": "img_0145",
+   "type": "class_swap|category_swap",
+   "score": 0.486,
+   "detail": "box 'couch' nằm trên segment 'chair' (IoU 0.97); segment này ĐÃ có box 'chair' riêng -> có thể COCO gán 2 lớp cho 1 vật",
+   "box": [
+    343.8,
+    173.5,
+    497.2,
+    269.2
+   ],
+   "segment_bbox": [
+    345,
+    174,
+    495,
+    269
+   ]
+  },
+  {
+   "image": "img_0115",
+   "type": "class_swap|category_swap",
+   "score": 0.485,
+   "detail": "box 'cup' nằm trên segment 'bowl' (IoU 0.97); segment này ĐÃ có box 'bowl' riêng -> có thể COCO gán 2 lớp cho 1 vật",
+   "box": [
+    171.7,
+    242.9,
+    281.6,
+    336.0
+   ],
+   "segment_bbox": [
+    172,
+    243,
+    281,
+    334
+   ]
+  },
+  {
+   "image": "img_0146",
+   "type": "class_swap|category_swap",
+   "score": 0.483,
+   "detail": "box 'truck' nằm trên segment 'car' (IoU 0.97); segment này ĐÃ có box 'car' riêng -> có thể COCO gán 2 lớp cho 1 vật",
+   "box": [
+    293.0,
+    77.7,
+    478.6,
+    211.4
+   ],
+   "segment_bbox": [
+    295,
+    76,
+    480,
+    211
+   ]
+  },
+  {
+   "image": "img_0062",
+   "type": "class_swap|category_swap",
+   "score": 0.473,
+   "detail": "box 'truck' nằm trên segment 'car' (IoU 0.95); segment này ĐÃ có box 'car' riêng -> có thể COCO gán 2 lớp cho 1 vật",
+   "box": [
+    0.9,
+    336.8,
+    63.3,
+    381.9
+   ],
+   "segment_bbox": [
+    0,
+    336,
+    62,
+    382
+   ],
+   "also": [
+    "class_swap|category_swap: box 'truck' nằm trên segment 'car' (IoU 0.90); segment này ĐÃ có box 'car' riêng -> có thể COCO gán 2 lớp cho 1 vật"
+   ]
+  },
+  {
+   "image": "img_0036",
+   "type": "class_swap|category_swap",
+   "score": 0.466,
+   "detail": "box 'bed' nằm trên segment 'couch' (IoU 0.93); segment này ĐÃ có box 'couch' riêng -> có thể COCO gán 2 lớp cho 1 vật",
+   "box": [
+    0.0,
+    347.8,
+    118.5,
+    480.0
+   ],
+   "segment_bbox": [
+    5,
+    346,
+    117,
+    480
+   ],
+   "also": [
+    "missing_box: segment 'person' 10894 px (3.5% ảnh) không có box"
+   ]
+  },
+  {
+   "image": "img_0120",
+   "type": "class_swap|category_swap",
+   "score": 0.462,
+   "detail": "box 'backpack' nằm trên segment 'handbag' (IoU 0.92); segment này ĐÃ có box 'handbag' riêng -> có thể COCO gán 2 lớp cho 1 vật",
+   "box": [
+    291.4,
+    360.1,
+    368.8,
+    414.2
+   ],
+   "segment_bbox": [
+    291,
+    362,
+    367,
+    415
+   ]
+  },
+  {
+   "image": "img_0226",
+   "type": "class_swap|category_swap",
+   "score": 0.458,
+   "detail": "box 'backpack' nằm trên segment 'suitcase' (IoU 0.92); segment này ĐÃ có box 'suitcase' riêng -> có thể COCO gán 2 lớp cho 1 vật",
+   "box": [
+    352.1,
+    253.1,
+    406.3,
+    294.3
+   ],
+   "segment_bbox": [
+    350,
+    254,
+    407,
+    295
+   ]
+  },
+  {
+   "image": "img_0006",
+   "type": "class_swap|category_swap",
+   "score": 0.452,
+   "detail": "box 'bus' nằm trên segment 'truck' (IoU 0.90); segment này ĐÃ có box 'truck' riêng -> có thể COCO gán 2 lớp cho 1 vật",
+   "box": [
+    138.5,
+    355.8,
+    175.9,
+    439.0
+   ],
+   "segment_bbox": [
+    137,
+    358,
+    175,
+    440
+   ]
+  },
+  {
+   "image": "img_0086",
+   "type": "class_swap|category_swap",
+   "score": 0.448,
+   "detail": "box 'chair' nằm trên segment 'dining table' (IoU 0.90); segment này ĐÃ có box 'dining table' riêng -> có thể COCO gán 2 lớp cho 1 vật",
+   "box": [
+    485.3,
+    0.0,
+    639.0,
+    131.8
+   ],
+   "segment_bbox": [
+    485,
+    1,
+    640,
+    120
+   ]
+  },
+  {
+   "image": "img_0169",
+   "type": "class_swap|category_swap",
+   "score": 0.412,
+   "detail": "box 'bus' nằm trên segment 'truck' (IoU 0.82); segment này ĐÃ có box 'truck' riêng -> có thể COCO gán 2 lớp cho 1 vật",
+   "box": [
+    0.0,
+    84.1,
+    162.2,
+    305.5
+   ],
+   "segment_bbox": [
+    0,
+    118,
+    160,
+    303
+   ]
+  },
+  {
+   "image": "img_0131",
+   "type": "class_swap|category_swap",
+   "score": 0.346,
+   "detail": "box 'truck' nằm trên segment 'car' (IoU 0.69); segment này ĐÃ có box 'car' riêng -> có thể COCO gán 2 lớp cho 1 vật",
+   "box": [
+    504.0,
+    114.0,
+    532.6,
+    141.7
+   ],
+   "segment_bbox": [
+    505,
+    119,
+    531,
+    144
+   ],
+   "also": [
+    "missing_box: segment 'motorcycle' 3530 px (1.2% ảnh) không có box"
+   ]
+  },
+  {
+   "image": "img_0171",
+   "type": "instance_merge",
+   "score": 0.479,
+   "detail": "segment 'backpack' (1624 px): box tốt nhất chỉ chứa 52%, box cùng lớp thứ hai chứa riêng 48%, hai box phủ 100%",
+   "segment_bbox": [
+    59,
+    187,
+    168,
+    313
+   ],
+   "boxes": [
+    [
+     59.1,
+     187.3,
+     84.4,
+     231.3
+    ],
+    [
+     135.5,
+     281.9,
+     168.4,
+     313.1
+    ]
+   ]
+  },
+  {
+   "image": "img_0079",
+   "type": "missing_box",
+   "score": 0.1407,
+   "detail": "segment 'cat' 38450 px (14.1% ảnh) không có box",
+   "segment_bbox": [
+    161,
+    156,
+    536,
+    375
+   ]
+  },
+  {
+   "image": "img_0245",
+   "type": "missing_box",
+   "score": 0.1003,
+   "detail": "segment 'toilet' 30816 px (10.0% ảnh) không có box",
+   "segment_bbox": [
+    378,
+    219,
+    548,
+    480
+   ]
+  },
+  {
+   "image": "img_0199",
+   "type": "missing_box",
+   "score": 0.0102,
+   "detail": "segment 'person' 2986 px (1.0% ảnh) không có box",
+   "segment_bbox": [
+    439,
+    206,
+    522,
+    382
+   ]
+  }
+ ]
+}
